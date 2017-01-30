@@ -1,3 +1,7 @@
+//Felix 1898 <2017> CalC Final Release v3.00
+//Made Independently in C Language
+//You are free to use any part of code or make changes...
+
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -172,7 +176,7 @@ printf("\n \n -> TO SEE WHAT WAS LAST CALCULATED(ONLY REALS) ENTER 5");
 printf("\n \n -> TO DEAL WITH MATRICES PRESS 6");
 printf("\n \n -> TO GENERATE INRANGE RANDOM NUMBERS, PRESS 7");
 printf("\n \n -> TO CONVERT THE BASE OF NUMBERS(EG. BIN TO DEC etc..), PRESS 8");
-printf("\n \n -> TO EXIT ENTER -1 \n");
+printf("\n \n -> TO EXIT ENTER -1 ( YOU MAY ENTER QUIT IN SOME FUNCTIONS TO EXIT TO MENU...) \n");
 printf("\n                              Created By Felix using Basic C <2017> \n");
 scanf("%f",&g);
 flag++;
@@ -237,7 +241,7 @@ float find(char* fix,int j)
     float x=atof(fix);
     return x;
 }
-float doshit(char* pofx)
+float basic(char* pofx)
 {
     float num[strlen(pofx)];
     char temp[10];
@@ -433,7 +437,7 @@ printf("\n Second Eigen Vector : ");
 }
 
 }
-void cof(int mat[N][N], int temp[N][N], int p, int q, int n)
+void cof(int mat[N][N], int t[N][N], int p, int q, int n)
 {
     int i = 0, j = 0;
     int row,col;
@@ -443,7 +447,7 @@ void cof(int mat[N][N], int temp[N][N], int p, int q, int n)
         {
             if (row != p && col != q)
             {
-                temp[i][j++] = mat[row][col];
+                t[i][j++] = mat[row][col];
                 if (j == n - 1)
                 {
                     j = 0;
@@ -458,13 +462,13 @@ long det(int mat[N][N], int n)
 
     if (n == 1)
         return mat[0][0];
- int temp[N][N];
+ int t[N][N];
  int s= 1;
- int f;
-    for (f = 0; f < n; f++)
+ int k;
+    for (k = 0; k < n; k++)
     {
-        cof(mat, temp, 0, f, n);
-        D += s * mat[0][f] * det(temp, n - 1);
+        cof(mat, t, 0, k, n);
+        D += s * mat[0][k] * det(t, n - 1);
          s = -s;
 
          }
@@ -908,20 +912,20 @@ int main()
    if(m!=0)
    {
    if(ch=='+')
-p=p+doshit(expf);
+p=p+basic(expf);
 else if(ch=='-')
-    p=p-doshit(expf);
+    p=p-basic(expf);
 else if(ch=='/')
-    p=p/doshit(expf);
+    p=p/basic(expf);
 else if(ch=='*')
-    p=p*doshit(expf);
+    p=p*basic(expf);
 else if(ch=='^')
-    p=pow(p,doshit(expf));
+    p=pow(p,basic(expf));
 else
     printf("\n Error");
    }
    else
-    p=p+doshit(expf);
+    p=p+basic(expf);
 
     printf("\n Result : %f",p);
     mem=p;
