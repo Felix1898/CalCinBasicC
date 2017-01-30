@@ -107,7 +107,7 @@ f=0;
             printf("-");
             else if(a[i][j]==1)
             {
-              if(flag==0){  for(f=0;f<3600000;f++);}
+              if(flag==0){  for(f=0;f<(3600000/5);f++);}
                 printf("{");
                 }
     }
@@ -133,7 +133,7 @@ f=0;
             printf("-");
             else if(a[i][j]==1)
             {
-               if(flag==0) { for(f=0;f<3600000;f++);}
+               if(flag==0) { for(f=0;f<(3600000/5);f++);}
                 printf("#");
             }
     }
@@ -171,6 +171,7 @@ printf("\n \n -> FOR DEALING WITH COMPLEX NUMBERS ENTER 4");
 printf("\n \n -> TO SEE WHAT WAS LAST CALCULATED(ONLY REALS) ENTER 5");
 printf("\n \n -> TO DEAL WITH MATRICES PRESS 6");
 printf("\n \n -> TO GENERATE INRANGE RANDOM NUMBERS, PRESS 7");
+printf("\n \n -> TO CONVERT THE BASE OF NUMBERS(EG. BIN TO DEC etc..), PRESS 8");
 printf("\n \n -> TO EXIT ENTER -1 \n");
 printf("\n                              Created By Felix using Basic C <2017> \n");
 scanf("%f",&g);
@@ -666,6 +667,7 @@ void convbase()
     scanf("%d",&f);
    }while(f==1);
     printf("\n REDIRECTING TO MENU............ \n");
+    main();
 }
 void genran()
 {
